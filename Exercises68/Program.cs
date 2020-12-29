@@ -36,9 +36,6 @@ namespace Exercises68
             //Show results
             var message = consecutive ? "Consecutive" : "Not Consecutive";
             Console.WriteLine(message);
-
-            
-       
         }
     }
 }
