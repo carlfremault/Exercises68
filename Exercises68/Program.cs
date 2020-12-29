@@ -14,9 +14,14 @@ namespace Exercises68
             Console.WriteLine("Please enter a few numbers separated by a hyphen :");
             var input = Console.ReadLine();
 
+            //Show results
+            Console.WriteLine(IsConsecutive(input) ? "Consecutive" : "Not Consecutive");
+        }
+        public static bool IsConsecutive(string input)
+        {
             // Create and sort List
             var numbers = new List<int>();
-            foreach(var number in input.Split('-'))
+            foreach (var number in input.Split('-'))
             {
                 numbers.Add(Convert.ToInt32(number));
             }
@@ -32,10 +37,7 @@ namespace Exercises68
                     break;
                 }
             }
-
-            //Show results
-            var message = consecutive ? "Consecutive" : "Not Consecutive";
-            Console.WriteLine(message);
+            return consecutive;
         }
     }
 }
