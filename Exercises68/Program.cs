@@ -12,17 +12,17 @@ namespace Exercises68
         {
             Console.WriteLine("Please enter a few numbers separated by a hyphen :");
             var input = Console.ReadLine();
+            Console.WriteLine(IsConsecutive(input));
+        }
+        public static string IsConsecutive(string input)
+        {
             var numbers = new List<int>();
-
-            foreach(var number in input.Split('-'))
+            foreach (var number in input.Split('-'))
             {
                 numbers.Add(Convert.ToInt32(number));
             }
-
             numbers.Sort();
-
             var consecutive = true;
-
             for (var i = 1; i < numbers.Count(); i++)
             {
                 if (numbers[i] - 1 != numbers[i - 1])
@@ -31,12 +31,14 @@ namespace Exercises68
                     break;
                 }
             }
-
-            var message = consecutive ? "Consecutive" : "Not Consecutive";
-            Console.WriteLine(message);
-
-            
-       
+            if (consecutive)
+            {
+                return ("Consecutive");
+            }
+            else
+            {
+                return ("Not Consecutive");
+            }
         }
     }
 }
